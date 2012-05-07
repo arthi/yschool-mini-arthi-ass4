@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       
+         <h:form>
+            
+            <h:commandLink value="Home" action="index" immediate="true"/>
+            <h:outputText value="&#160;"/>
+            <h:commandLink value="Student" action="listUser" immediate="true"/>
+          
+            
+            <h3>Search</h3>
+            
+            <h:message for="#{null}" errorStyle="color : red;" infoStyle="color : green"/><br/>
+            
+            <h:outputText value="Name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:"/>
+            <h:inputText id="name" value="#{studentManagedBean.selectedStudent.name}">
+                </h:inputText><br/>
+              <h:outputText value="Grade&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:"/>
+            <h:inputText id="grade" value="#{studentManagedBean.selectedStudent.grade}">   
+          
+            </h:inputText><br></br>
+            
+            
+
+            <h:commandButton value="Search" actionListener="#{studentManagedBean.searchStudent()}" action="studentlist">
+                        
+            </h:commandButton>
+            
+         </h:form>
+  </h:body>
+</html>
+

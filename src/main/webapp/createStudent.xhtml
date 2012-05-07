@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+   
+     <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       
+         <h:form>
+            
+            <h:commandLink value="Home" action="index" immediate="true"/>
+            <h:outputText value="&#160;"/>
+            <h:commandLink value="Student" action="listStudent" immediate="true"/>
+          
+            
+            <h3>Create Student</h3>
+            
+            <h:message for="#{null}" errorStyle="color : red;" infoStyle="color : green"/><br/>
+            
+            <h:outputText value="Name&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:"/>
+            <h:inputText id="name" value="#{studentManagedBean.selectedStudent.name}"> 
+             <f:validateRequired></f:validateRequired>
+            </h:inputText><br></br>
+            
+            <h:outputText value="Address&#160;&#160;&#160;&#160;&#160;&#160;:"/>
+            <h:inputText id="address" label="address" value="#{studentManagedBean.selectedStudent.address}">
+                 <f:validateRequired></f:validateRequired>
+            </h:inputText>
+            <br></br>
+            
+            <h:outputText value="Grade&#160;&#160;&#160;&#160;&#160;&#160;&#160;:"/>
+            <h:inputText id="grade" label="grade" value="#{studentManagedBean.selectedStudent.grade}"> 
+                  <f:validateRequired></f:validateRequired>
+                
+            </h:inputText><br/>
+            
+            <h:outputText value="Parent Name&#160;&#160;:"/>
+            <h:inputText id="parentName" label="parentName"  value="#{studentManagedBean.selectedStudent.parentName}">
+            <f:validateRequired></f:validateRequired>
+            </h:inputText><br></br>
+             <h:commandButton value="Create Student" action="createStudent"/>
+           
+            
+        </h:form>
+    </h:body>
+    
+</html>
+
